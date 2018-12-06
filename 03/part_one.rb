@@ -43,15 +43,15 @@ fh = open filename
 while (line = fh.gets)
   coords = parse_line(line)
 
-  puts line
-  put_coords coords
+  #puts line
+  #put_coords coords
 
-  for x in coords[:x]..(coords[:x] + coords[:z])
+  for x in coords[:x]..(coords[:x] + coords[:z] - 1)
     if fabric[x].nil?
       fabric[x] = Array.new(cols)
     end
 
-    for y in coords[:y]..(coords[:y] + coords[:q])
+    for y in coords[:y]..(coords[:y] + coords[:q] - 1)
       if fabric[x][y].nil?
         fabric[x][y] = 1
       elsif fabric[x][y] == 1

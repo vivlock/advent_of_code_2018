@@ -1,5 +1,5 @@
 https://adventofcode.com/
 
-I'm using this as an excuse to practice my Ruby.
+I'm using this as an excuse to practice my Ruby and flex my programming muscles.
 
-Each day has its own folder, and all but day 1 will have separate scripts for part 1 and part 2. I wasn't thinking about this for day 1, so I just overwrote my first script. It was simple but I'm not going to recreate it for posterity.
+Each day has its own folder. Day 1 had its part 1 code overwritten before I considered saving this for reference and/or portfolio use. Each day should have input file(s) and at least one script to solve the puzzle, and may additionally have some sandbox code where I played around to learn something.

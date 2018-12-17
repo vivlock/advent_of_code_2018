@@ -5,5 +5,8 @@ FILENAME = "input.txt"
 
 node = parse_node(read_file(FILENAME))
 sum = sum_metadata(node)
+value = calculate_value(node)
 
-puts "I dunno lol it's #{sum}"
+puts "The sum of all metadata is #{sum}"
+
+puts "The total node value is #{value}"

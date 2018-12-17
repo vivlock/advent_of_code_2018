@@ -33,6 +33,9 @@ class Node
   def children
     return @children
   end
+  def children?
+    return @children.length > 0
+  end
   def metadata
     return @metadata
   end
@@ -41,6 +44,9 @@ class Node
   end
   def add_metadata(metadata)
     @metadata.push(metadata)
+  end
+  def metadata_string
+    return @metadata.join(' ')
   end
 end
 
@@ -51,4 +57,24 @@ def sum_metadata(node)
     total += sum_metadata node.children[i]
   end
   return total
+end
+
+def calculate_value(node)
+  # if this has no child entries, return sum of metadata
+
+  # if it DOES have children, the metadata refers to the child-nodes 1-indexed
+  # and the node's value is the sum of the values of the child nodes referenced by the metadata
+  
+  if node.children?
+    total = 0
+    node.metadata.each do |meta|
+      if !node.children[meta - 1].nil?
+        total += calculate_value(node.children[meta - 1])
+      end
+    end
+    return total
+  else
+    return node.metadata.reduce(:+)
+  end
+
 end
